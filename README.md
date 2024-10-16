@@ -14,9 +14,9 @@
 
 ## 使用说明
 
-- 对主源文件`main.tex`按照`xelatex->biber->xelatex->xelatex`的顺序编译得到输出 PDF 文档`main.pdf`。
-- 建议在中文 Windows 操作系统（默认安装了模板所需的中文字体：宋体、黑体和楷体）与较新的 TEXLive 本地发行版环境下，在 Visual Studio Code 中搭配 LaTeX Workshop 扩展使用。
-- 详细使用方法和配置说明，请参考 [README.pdf](README.pdf)。
+- **编译方式**：对主源文件`main.tex`按照`xelatex->biber->xelatex->xelatex`的顺序编译得到输出 PDF 文档`main.pdf`。
+- **使用平台**：建议在中文 Windows 操作系统（默认安装了模板所需的中文字体：宋体、黑体和楷体）与较新的 TEXLive 本地发行版环境下，在 Visual Studio Code 中搭配 LaTeX Workshop 扩展使用。
+- **备注**：详细使用方法、配置说明与示例，请参考 [README.pdf](README.pdf)。
 
 ## 联系方式
 
