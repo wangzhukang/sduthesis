@@ -1,0 +1,94 @@
+{
+  // Editor
+  "editor.formatOnSave": true,
+  "editor.fontSize": 18,
+  "editor.inlineSuggest.enabled": true,
+  "editor.wordWrap": "on",
+
+  // LaTex
+
+  // 禁用自动编译
+  "latex-workshop.latex.autoBuild.run": "never",
+
+  // 默认选第一个recipe
+  "latex-workshop.latex.recipe.default": "first",
+
+  // 启用latexindet格式化
+  "latex-workshop.formatting.latex": "latexindent",
+
+  // 使用内置PDF查看器
+  "latex-workshop.view.pdf.viewer": "tab",
+
+  // 在PDF中双击可以跳转到源代码中对应的位置。如果想在查看源代码中的代码块在PDF中对应的位置，可以使用默认快捷键Ctrl+Alt+J
+  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+
+  // 相关辅助设置
+  "latex-workshop.showContextMenu": true,
+  "latex-workshop.intellisense.package.enabled": true,
+  "latex-workshop.message.error.show": false,
+  "latex-workshop.message.warning.show": false,
+
+  // 编译选项，一般情况下，command直接设置为xelatex等等即可。若要指定编译程序，需要将command设置为对应程序的路径，例如"E://texlive//2023//bin//windows//xelatex"
+  "latex-workshop.latex.tools": [
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOCFILE%"
+      ]
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": ["%DOCFILE%"]
+    }
+  ],
+
+  "latex-workshop.latex.recipes": [
+    // 使用xelatex -> biber -> xelatex -> xelatex顺序编译
+    {
+      "name": "xelatex -> biber -> xelatex -> xelatex",
+      "tools": ["xelatex", "biber", "xelatex", "xelatex"]
+    },
+    // xelatex单步测试
+    {
+      "name": "xelatex",
+      "tools": ["xelatex"]
+    },
+    // biber单步测试
+    {
+      "name": "biber",
+      "tools": ["biber"]
+    }
+  ],
+
+  // 编译成功后自动清理不必要的文件，如果编译失败，这些中间文件会被保留，以便排查问题
+  "latex-workshop.latex.autoClean.run": "onSucceeded",
+  "latex-workshop.latex.clean.method": "glob",
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.bcf",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.log",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.fdb_latexmk",
+    "*.run.xml"
+  ]
+}
