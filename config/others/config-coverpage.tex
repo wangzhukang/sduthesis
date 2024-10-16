@@ -1,0 +1,63 @@
+\newtoks\Title
+\newtoks\StudentID
+\newtoks\Author
+\newtoks\Department
+\newtoks\Major
+\newtoks\Grade
+\newtoks\Teacher
+\newtoks\Date
+
+\newcommand{\Lwidth}{2.3cm}
+\newcommand{\Rwidth}{5.5cm}
+
+% 自行调整标题的限制宽度
+\newcommand{\titlewidth}{0.9\textwidth}
+
+\newcommand{\Lcolumn}[1]{\makebox[\Lwidth][c]{{\zihao{3}\bfkai{#1}}}}
+\newcommand{\Rcolumn}[1]{\makebox[\Rwidth][c]{{\zihao{4}\song{#1}}}}
+
+\newcommand{\makecoverpage}{
+    \begin{center}
+        \phantomsection
+        \hypertarget{coverpage}{}
+        \bookmark[dest=coverpage,level=0]{封面}
+
+        \vspace*{5mm}
+
+        \includegraphics[width=0.7\textwidth]{sdu-logo2.pdf}
+
+        \vspace*{10mm}
+
+        \includegraphics[width=0.95\textwidth]{sdu-title.pdf}
+
+        \vspace*{5mm}
+
+        \begin{flushleft}
+            \zihao{3}\bfsong{论文（设计）题目：}
+        \end{flushleft}
+
+        \vspace*{10mm}
+
+        \begin{minipage}{\titlewidth}
+            \centering
+            \zihao{-2}\bfhei{\the\Title}
+        \end{minipage}
+
+        \vspace*{30mm}
+
+        \begin{tabular}{p{\Lwidth}p{\Rwidth}}
+            \Lcolumn{姓\qquad 名} & \Rcolumn{\the\Author}     \\[-0.8mm]\cline{2-2}\\[-4mm]
+            \Lcolumn{学\qquad 号} & \Rcolumn{\the\StudentID}  \\[-0.8mm]\cline{2-2}\\[-4mm]
+            \Lcolumn{学\qquad 院} & \Rcolumn{\the\Department} \\[-0.8mm]\cline{2-2}\\[-4mm]
+            \Lcolumn{专\qquad 业} & \Rcolumn{\the\Major}      \\[-0.8mm]\cline{2-2}\\[-4mm]
+            \Lcolumn{年\qquad 级} & \Rcolumn{\the\Grade}      \\[-0.8mm]\cline{2-2}\\[-4mm]
+            \Lcolumn{指导教师}      & \Rcolumn{\the\Teacher}    \\[-0.8mm]\cline{2-2}
+        \end{tabular}
+
+        \vspace*{25mm}
+
+        \zihao{4}\song{\the\Date}
+    \end{center}
+
+    \clearpage
+}

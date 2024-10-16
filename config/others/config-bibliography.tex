@@ -1,0 +1,15 @@
+\addbibresource{data/reference.bib}
+
+\renewcommand{\bibfont}{\zihao{5}}
+
+\newcommand{\printbib}{
+    \newpage
+    \setstretch{1}
+
+    \phantomsection
+    \addcontentsline{toc}{chapter}{参考文献}
+
+    \chapter*{参考文献}
+
+    \printbibliography[heading=none]
+}

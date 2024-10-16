@@ -1,0 +1,10 @@
+% 设置从正文开始的页眉页脚格式
+\setcounter{page}{1}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \renewcommand{\thepage}{\arabic{page}}
+  \renewcommand{\headrulewidth}{0.5pt}
+  \fancyhead[C]{\zihao{-5}山东大学本科毕业论文（设计）}
+  \fancyfoot[C]{\zihao{-5}\thepage}
+}
+\pagestyle{plain}

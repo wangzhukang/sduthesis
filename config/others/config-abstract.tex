@@ -1,0 +1,41 @@
+\newenvironment{enabstract}{
+    \phantomsection
+    \hypertarget{enabstract}{}
+    \bookmark[dest=enabstract,level=0]{英文摘要}
+
+    \vspace*{12pt}
+    \centerline{\zihao{-2}\textbf{ABSTRACT}}
+    \vspace*{12pt}
+
+    \setlength{\parindent}{1.2em}
+    \zihao{-4}
+}{
+    \clearpage
+}
+
+\newenvironment{cnabstract}{
+    \phantomsection
+    \hypertarget{cnabstract}{}
+    \bookmark[dest=cnabstract,level=0]{中文摘要}
+
+    \vspace*{12pt}
+    \centerline{\zihao{-2}\bfhei{摘\quad 要}}
+    \vspace*{12pt}
+
+    \setlength{\parindent}{1.2em}
+    \zihao{-4}
+}{
+    \clearpage
+}
+
+\newcommand{\enkeywords}[1]{
+    \vspace{1cm}
+    \noindent{\zihao{-4}\textbf{Key Words}:}
+    {#1}
+}
+
+\newcommand{\cnkeywords}[1]{
+    \vspace{1cm}
+    \noindent{\zihao{-4}\bfhei{关键词}：}
+    {#1}
+}

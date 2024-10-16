@@ -1,0 +1,27 @@
+\newcommand{\maketable}{
+    \renewcommand{\cleardoublepage}{\clearpage}
+    % 设置页码格式
+    \setcounter{page}{1}
+    \fancypagestyle{plain}{
+        \fancyhf{}
+        \renewcommand{\thepage}{\Roman{page}}
+        \renewcommand{\headrulewidth}{0pt}
+        \fancyfoot[C]{\zihao{-5}\thepage}
+    }
+    \pagestyle{plain}
+
+    % 设置目录表格式
+    \renewcommand{\contentsname}{目\quad 录}
+    \renewcommand{\cfttoctitlefont}{\hfill\allbfhei\zihao{-2}}
+    \renewcommand{\cftaftertoctitle}{\hfill}
+    \renewcommand{\cftbeforetoctitleskip}{12pt}
+    \renewcommand{\cftaftertoctitleskip}{12pt}
+    \renewcommand{\cftdotsep}{1.5}
+    \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+    \phantomsection
+    \hypertarget{tableofcontent}{}
+    \bookmark[dest=tableofcontent,level=0]{目录}
+
+    \tableofcontents
+}

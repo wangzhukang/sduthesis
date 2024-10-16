@@ -1,0 +1,195 @@
+% 导入宏包
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{unicode-math}
+\usepackage{xeCJK}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{bookmark}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{algorithm2e}
+\usepackage{enumitem}
+\usepackage{tocloft}
+\usepackage{subfig}
+\usepackage[
+    backend=biber,
+    style=gb7714-2015,
+    gbnamefmt=givenahead
+]{biblatex}
+\usepackage{hyperref}
+
+
+% -------------------文本选项-------------------
+% 让已定义的字体失效
+\let\songti\relex
+\let\heiti\relex
+\let\kaiti\relex
+
+% 正文西文字体用Times New Roman
+\setmainfont{Times New Roman}
+
+% % 设置中英文等宽字体用于展示代码
+% \renewcommand{\CJKttdefault}{FangSong}
+% \setmonofont{Consolas}
+% \setCJKmonofont{Microsoft YaHei}
+
+% 设置数学模式下字体
+\setmathfont{XITS Math}
+\setmathfont[range=\mathop]{Latin Modern Math}
+
+% 设置中文字体及其伪粗体。建议不要在文档中使用过多种类的字体，一般而言，宋体+黑体+楷体已经足够。可以自行选择加粗的程度。
+\newCJKfontfamily\songti[AutoFakeBold=3]{SimSun}
+\newCJKfontfamily\heiti[AutoFakeBold=3]{SimHei}
+\newCJKfontfamily\kaiti[AutoFakeBold=3]{KaiTi}
+
+% 后续局部定义字体，必须带{}
+\newcommand{\song}[1]{{\songti{#1}}}
+\newcommand{\hei}[1]{{\heiti{#1}}}
+\newcommand{\kai}[1]{{\kaiti{#1}}}
+
+% 后续局部加粗，类比\textbf{}，必须带{}
+\newcommand{\bfsong}[1]{{\songti\textbf{#1}}}
+\newcommand{\bfhei}[1]{{\heiti\textbf{#1}}}
+\newcommand{\bfkai}[1]{{\kaiti\textbf{#1}}}
+
+% 后续全局加粗，类比\bfseries，不用带{}
+\newcommand{\allbfsong}{\songti\bfseries}
+\newcommand{\allbfhei}{\heiti\bfseries}
+\newcommand{\allbfkai}{\kaiti\bfseries}
+
+% 全局默认使用小四号宋体
+\AtBeginDocument{\zihao{-4}\songti}
+
+% 全局默认使用1.5倍行距
+\setstretch{1.5}
+% -------------------文本选项-------------------
+
+
+% -------------------页面选项-------------------
+% 页边距设置
+\geometry{
+    a4paper,
+    left=3cm,
+    right=3cm,
+    top=2.5cm,
+    bottom=2.5cm,
+}
+
+% 页面顶部对齐，允许底部有空白
+\raggedbottom
+% -------------------页面选项-------------------
+
+
+% -------------------章节标题选项-------------------
+% 最多显示三级标题
+\setcounter{secnumdepth}{3}
+
+% 章节标题格式与前后距离
+\ctexset{
+    chapter={
+      format=\centering\zihao{3}\allbfhei,
+      name={第,章},
+      beforeskip=21.6pt,
+      afterskip=18pt,
+      fixskip=true,
+     },
+    section={
+      format= \zihao{4}\allbfhei,
+      name={},
+      beforeskip=18pt,
+      afterskip=18pt,
+      fixskip=true,
+     },
+    subsection={
+            format=\zihao{-4}\allbfhei,
+            name={},
+            beforeskip=18pt,
+            afterskip=18pt,
+            fixskip=true,
+        },
+    subsubsection={
+            format=\zihao{-4}\allbfhei,
+            name={},
+            beforeskip=18pt,
+            afterskip=18pt,
+            fixskip=true,
+        }
+}
+% -------------------章节标题选项-------------------
+
+
+% -------------------交叉引用选项-------------------
+% 交叉引用颜色选项
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=violet,
+    citecolor=red,
+}
+
+% PDF属性选项，可有可无
+\hypersetup{
+    bookmarksnumbered=true,
+    pdfstartview=FitH,
+}
+
+% 自定义引用命令
+\newcommand{\equref}[1]{式\ \eqref{#1}\ }
+\newcommand{\tabref}[1]{表\ \ref{#1}\ }
+\newcommand{\figref}[1]{图\ \ref{#1}\ }
+\newcommand{\subfigref}[1]{{图\ \subref*{#1}\ }}
+% -------------------交叉引用选项-------------------
+
+
+% -------------------图表标题选项-------------------
+% 存放路径
+\graphicspath{{images/}}
+
+% 自定义标题样式
+\DeclareCaptionFont{mybfsong}{\allbfsong}
+\DeclareCaptionFont{mywuhao}{\zihao{5}}
+\DeclareSubrefFormat{mysubref}{#1(#2)}
+
+% 可以自行调整各种距离
+\captionsetup[figure]{
+    position=below,
+    font={mywuhao,stretch=1.0},
+    labelfont=mybfsong,
+    textfont=mybfsong,
+    labelsep=quad,
+    margin=40pt,
+    belowskip=-4pt,
+}
+\captionsetup[table]{
+    position=above,
+    font={mywuhao,stretch=1.0},
+    labelfont=mybfsong,
+    textfont=mybfsong,
+    labelsep=quad,
+    margin=40pt,
+    belowskip=4pt,
+}
+\captionsetup[subfloat]{
+    position=below,
+    font={mywuhao,stretch=1.0},
+    labelfont=mybfsong,
+    textfont=mybfsong,
+    subrefformat=mysubref,
+}
+% -------------------图表标题选项-------------------
+
+
+% -------------------数学选项-----------------------
+\newcommand{\mye}{\ensuremath{\mathrm{e}}}
+\newcommand{\myi}{\ensuremath{\mathrm{i}}}
+\newcommand{\myj}{\ensuremath{\mathrm{j}}}
+% -------------------数学选项-----------------------
+
