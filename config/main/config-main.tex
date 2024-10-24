@@ -46,9 +46,9 @@
 \setmathfont[range=\mathop]{Latin Modern Math}
 
 % 设置中文字体及其伪粗体。建议不要在文档中使用过多种类的字体，一般而言，宋体+黑体+楷体已经足够。可以自行选择加粗的程度。
-\newCJKfontfamily\songti[AutoFakeBold=3]{SimSun}
-\newCJKfontfamily\heiti[AutoFakeBold=3]{SimHei}
-\newCJKfontfamily\kaiti[AutoFakeBold=3]{KaiTi}
+\newCJKfontfamily\songti[Path=./fonts/,AutoFakeBold=3]{simsun.ttc}
+\newCJKfontfamily\heiti[Path=./fonts/,AutoFakeBold=3]{simhei.ttf}
+\newCJKfontfamily\kaiti[Path=./fonts/,AutoFakeBold=3]{simkai.ttf}
 
 % 后续局部定义字体，必须带{}
 \newcommand{\song}[1]{{\songti{#1}}}
@@ -128,6 +128,7 @@
 
 % -------------------交叉引用选项-------------------
 % 交叉引用颜色选项
+\definecolor{linkdarkblue}{rgb}{0,0.08,0.45}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,

@@ -1,7 +1,6 @@
 {
   // Editor
   "editor.formatOnSave": true,
-  "editor.fontSize": 18,
   "editor.inlineSuggest.enabled": true,
   "editor.wordWrap": "on",
 
