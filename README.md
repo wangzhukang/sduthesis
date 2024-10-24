@@ -16,8 +16,7 @@
 
 - **编译方式**：对主源文件 `main.tex` 按照 `xelatex->biber->xelatex->xelatex` 的顺序编译得到输出 PDF 文档 `main.pdf` 。
 - **使用平台**：
-  - （推荐）在中文 Windows 操作系统与较新的 TeXLive 本地发行版环境下，在 Visual Studio Code 中搭配 LaTeX Workshop 扩展使用。`.vscode/settings.json` 中提供了可能会优化使用体验的 Visual Studio Code 局
-    部设置。
+  - （推荐）在中文 Windows 操作系统与较新的 TeXLive 本地发行版环境下，在 Visual Studio Code 中搭配 LaTeX Workshop 扩展使用。`.vscode/settings.json` 中提供了可能会优化使用体验的 Visual Studio Code 局部设置。
   - 在 Overleaf 平台上使用，编译器设置为 `xelatex` ，主文档设置为 `main.tex` ，TeXLive 版本选择较新版即可。
 
 详细使用方法、配置说明与示例，请参考 [PDF 版本说明文档](README.pdf)。
