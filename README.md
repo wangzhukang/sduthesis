@@ -24,7 +24,7 @@
 
 ## 模板在TeXstudio中的编译与使用
 
-本人使用该仓库编译论文时使用的是TeXstudio 4.8.1，稍微探索了一下，将在TeXstudio编译论文的方法整理如下：
+TeXstudio 4.8.1 中编译论文的方法整理如下：
 
 ### Step 1: 打开“选项”
 
@@ -84,8 +84,6 @@
 2. 所有英文文献应当统一格式：英文题目要么只有第一个单词首字母大写，要么每个单词首字母大写（介词preposition、连词conjunction、副词adverb应小写）；英文期刊/会议名每个单词首字母大写
 
 ## 联系方式
-
-本仓库fork自[此处](https://github.com/wangzhukang/sduthesis)，如有问题或建议，建议通过以下渠道联系原作者：
 
 - email：zhukangwang1005@gmail.com
 - issue/pr：[GitHub - sduthesis](https://github.com/wangzhukang/sduthesis) 
